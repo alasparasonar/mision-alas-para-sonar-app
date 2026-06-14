@@ -29,5 +29,44 @@ const { title, description, image, pathname } = Astro.props;
     </main>
     <Footer />
     <WhatsAppButton />
+    <script>
+      const canAnimate = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (canAnimate) {
+        document.documentElement.classList.add('motion-ready');
+
+        const sections = Array.from(document.querySelectorAll('main > section'));
+
+        sections.forEach((section, sectionIndex) => {
+          section.classList.add('motion-section');
+          section.setAttribute('data-motion-section', String(sectionIndex));
+
+          const items = Array.from(
+            section.querySelectorAll(
+              '.container-page > *, article, figure, form, iframe, .soft-card, [data-motion-item]'
+            )
+          ).slice(0, 14);
+
+          items.forEach((item, itemIndex) => {
+            item.classList.add('motion-item');
+            item.setAttribute('style', `${item.getAttribute('style') ?? ''}; --motion-delay: ${Math.min(itemIndex, 8) * 85}ms`);
+          });
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -12% 0px', threshold: 0.16 }
+        );
+
+        document.querySelectorAll('.motion-section, .motion-item').forEach((element) => observer.observe(element));
+      }
+    </script>
   </body>
 </html>

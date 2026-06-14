@@ -106,6 +106,56 @@ img {
   animation: carousel-progress 5.2s linear forwards;
 }
 
+.motion-ready .motion-section {
+  opacity: 0;
+  transform: translateY(34px);
+}
+
+.motion-ready .motion-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 760ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-ready .motion-item {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(26px) scale(0.98);
+}
+
+.motion-ready .motion-item.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+  transition:
+    opacity 720ms ease var(--motion-delay, 0ms),
+    filter 780ms ease var(--motion-delay, 0ms),
+    transform 860ms cubic-bezier(0.16, 1, 0.3, 1) var(--motion-delay, 0ms);
+}
+
+.motion-ready .motion-item:nth-child(odd).is-visible {
+  transform-origin: left center;
+}
+
+.motion-ready .motion-item:nth-child(even).is-visible {
+  transform-origin: right center;
+}
+
+.section-pad {
+  position: relative;
+}
+
+.section-pad::after {
+  content: "";
+  position: absolute;
+  inset: auto 8% 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(8 123 182 / 0.16), transparent);
+  pointer-events: none;
+}
+
 .aid-marquee {
   animation: marquee 24s linear infinite;
 }
@@ -125,6 +175,26 @@ img {
 
   .hero-glow-two {
     animation-delay: -2.4s;
+  }
+
+  .whatsapp-pulse::before {
+    animation: whatsapp-ring 2.4s ease-out infinite;
+  }
+
+  .seal-orbit {
+    animation: seal-orbit 16s linear infinite;
+  }
+
+  .seal-spark {
+    animation: sparkle-drift 4.8s ease-in-out infinite;
+  }
+
+  .seal-spark:nth-child(2) {
+    animation-delay: -1.6s;
+  }
+
+  .seal-spark:nth-child(3) {
+    animation-delay: -3.2s;
   }
 
   .aid-card {
@@ -200,10 +270,46 @@ img {
       transform: scaleX(1);
     }
   }
+
+  @keyframes whatsapp-ring {
+    0% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.55);
+    }
+  }
+
+  @keyframes seal-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes sparkle-drift {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-8px) scale(1.16);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .aid-marquee {
     animation: none;
+  }
+
+  .motion-section,
+  .motion-item {
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }

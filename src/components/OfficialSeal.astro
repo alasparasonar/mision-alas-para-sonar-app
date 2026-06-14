@@ -7,6 +7,10 @@ import site from '@data/site.json';
   <div class="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
     <div class="relative mx-auto w-full max-w-sm">
       <div class="absolute inset-0 rounded-full bg-sun/45 blur-3xl"></div>
+      <div class="seal-orbit absolute inset-[-18px] rounded-full border border-dashed border-white/70"></div>
+      <span class="seal-spark absolute left-8 top-5 h-3 w-3 rounded-full bg-sun shadow-lg shadow-sun/40"></span>
+      <span class="seal-spark absolute bottom-14 right-2 h-2.5 w-2.5 rounded-full bg-coral shadow-lg shadow-coral/40"></span>
+      <span class="seal-spark absolute right-12 top-0 h-2 w-2 rounded-full bg-white shadow-lg shadow-white/40"></span>
       <img
         src={site.logo}
         alt={`Logo oficial de ${site.legalName}`}
