@@ -15,7 +15,7 @@ const nav = [
 <header class="sticky top-0 z-50 border-b border-sky-deep/10 bg-cloud/90 backdrop-blur-xl">
   <div class="container-page flex min-h-20 items-center justify-between gap-4">
     <a href="/" class="flex items-center gap-3" aria-label="Ir al inicio">
-      <img src="/logo.svg" alt="" class="h-14 w-14 shrink-0 rounded-full" />
+      <img src={site.logo} alt={`Logo de ${site.name}`} class="h-14 w-14 shrink-0 rounded-full border-2 border-sun bg-white object-cover shadow-md shadow-sky-deep/10" />
       <span class="max-w-40 text-sm font-extrabold leading-tight text-ink sm:max-w-none sm:text-base">
         {site.name}
       </span>

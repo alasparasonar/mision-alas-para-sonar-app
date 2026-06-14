@@ -12,6 +12,7 @@ import GalleryGrid from '@components/GalleryGrid.astro';
 import VideoEmbed from '@components/VideoEmbed.astro';
 import DonationBox from '@components/DonationBox.astro';
 import SocialSection from '@components/SocialSection.astro';
+import OfficialSeal from '@components/OfficialSeal.astro';
 import programs from '@data/programs.json';
 import gallery from '@data/gallery.json';
 import videos from '@data/videos.json';
@@ -24,6 +25,7 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
 <BaseLayout>
   <Hero />
   <ImpactStats />
+  <OfficialSeal />
   <HelpJourney />
 
   <section class="section-pad">

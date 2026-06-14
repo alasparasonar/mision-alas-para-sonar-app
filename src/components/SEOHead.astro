@@ -11,7 +11,7 @@ interface Props {
 const {
   title = site.name,
   description = site.description,
-  image = '/logo.svg',
+  image = site.logo ?? '/logo.svg',
   pathname = '/',
 } = Astro.props;
 

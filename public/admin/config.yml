@@ -22,6 +22,7 @@ collections:
           - { label: "Nombre legal", name: "legalName", widget: "string" }
           - { label: "Lema", name: "tagline", widget: "string" }
           - { label: "Descripcion", name: "description", widget: "text" }
+          - { label: "Logo", name: "logo", widget: "image" }
           - { label: "Correo", name: "email", widget: "string" }
           - { label: "Telefono", name: "phone", widget: "string" }
           - { label: "WhatsApp", name: "whatsapp", widget: "string" }
