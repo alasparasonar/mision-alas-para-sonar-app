@@ -9,7 +9,7 @@ Sitio institucional moderno, responsive y administrable para una fundacion sin f
 - Tailwind CSS
 - Decap CMS en `/admin`
 - Contenido en Markdown y JSON
-- Cloudflare Workers con assets estaticos para hosting y despliegue automatico
+- Cloudflare Pages para hosting y despliegue automatico
 
 ## Instalacion local
 
@@ -65,7 +65,7 @@ Para produccion:
 1. Edita `public/admin/config.yml`.
 2. Confirma que `public/admin/config.yml` apunte al repo real: `alasparasonar/mision-alas-para-sonar-app`.
 3. Configura un backend OAuth para Decap CMS con GitHub.
-4. Publica en Cloudflare Workers.
+4. Publica en Cloudflare Pages.
 5. Entra a `https://misionalasparasonar.org/admin/`.
 
 Para pruebas locales del CMS puedes usar:
@@ -77,14 +77,14 @@ npm run dev
 
 Luego abre `http://localhost:4321/admin/`.
 
-## Despliegue en Cloudflare Workers
+## Despliegue en Cloudflare Pages
 
 1. Sube el proyecto a GitHub.
-2. En Cloudflare, crea una aplicacion conectada al repositorio.
+2. En Cloudflare Pages, crea un proyecto conectado al repositorio.
 3. Configura:
    - Project name: `mision-alas-para-sonar-app`
    - Build command: `npm run build`
-   - Deploy command: `npx wrangler deploy`
+   - Deploy command: `npx wrangler pages deploy dist --project-name=mision-alas-para-sonar-app`
    - Production branch: `main`
 4. Agrega las variables de entorno necesarias.
 5. Cada push a `main` desplegara automaticamente.
@@ -92,7 +92,7 @@ Luego abre `http://localhost:4321/admin/`.
 ## Dominio propio
 
 1. Compra o administra `misionalasparasonar.org`.
-2. En Cloudflare Workers agrega el dominio personalizado.
+2. En Cloudflare Pages agrega el dominio personalizado.
 3. Configura los DNS indicados por Cloudflare.
 4. Activa HTTPS automatico.
 5. Verifica `robots.txt` y `sitemap-index.xml`.

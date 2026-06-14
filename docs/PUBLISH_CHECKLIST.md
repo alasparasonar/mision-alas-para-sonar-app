@@ -15,16 +15,16 @@
 - Subir el proyecto a la rama `main`.
 - Proteger credenciales: no subir `.env`.
 
-## Cloudflare Workers
+## Cloudflare Pages
 
 - Project name: `mision-alas-para-sonar-app`.
 - Build command: `npm run build`.
-- Deploy command: `npx wrangler deploy`.
+- Deploy command: `npx wrangler pages deploy dist --project-name=mision-alas-para-sonar-app`.
 - Branch de produccion: `main`.
 
 ## Variables de entorno
 
-Configurar en Cloudflare Workers:
+Configurar en Cloudflare Pages:
 
 - `PUBLIC_SITE_URL`: `https://misionalasparasonar.org`
 - `PUBLIC_CONTACT_FORM_ENDPOINT`: endpoint del formulario de contacto.
@@ -35,7 +35,7 @@ Configurar en Cloudflare Workers:
 
 ## Dominio y SSL
 
-- Agregar `misionalasparasonar.org` como dominio personalizado en Cloudflare Workers.
+- Agregar `misionalasparasonar.org` como dominio personalizado en Cloudflare Pages.
 - Apuntar DNS segun indique Cloudflare.
 - Activar HTTPS automatico.
 - Confirmar que `https://misionalasparasonar.org/sitemap-index.xml` responde correctamente.

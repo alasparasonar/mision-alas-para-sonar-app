@@ -3,7 +3,7 @@
 ## Dominio personalizado
 
 1. Comprar o administrar `misionalasparasonar.org`.
-2. En Cloudflare Workers, abrir el proyecto y entrar a `Settings > Domains & Routes`.
+2. En Cloudflare Pages, abrir el proyecto y entrar a `Custom domains`.
 3. Agregar:
    - `misionalasparasonar.org`
    - `www.misionalasparasonar.org`
@@ -12,9 +12,9 @@
 
 ## Registros DNS habituales
 
-Cloudflare suele usar:
+Cloudflare Pages suele usar:
 
-- `CNAME` para `www` apuntando al destino que indique Cloudflare.
+- `CNAME` para `www` apuntando al subdominio de Pages.
 - Registro apex gestionado por Cloudflare para el dominio raiz.
 
 Sigue siempre el valor exacto que muestre Cloudflare.
@@ -39,6 +39,6 @@ El correo institucional recibe mensajes, pero el sitio necesita un servicio para
 - Formspree: facil para sitios estaticos.
 - Resend: flexible y profesional; puede requerir endpoint serverless.
 - Cloudflare Workers: control total en el ecosistema Cloudflare.
-- Netlify Forms: util si se alojara en Netlify, no recomendado si el hosting sera Cloudflare Workers.
+- Netlify Forms: util si se alojara en Netlify, no recomendado si el hosting sera Cloudflare Pages.
 
-Configura los endpoints en Cloudflare Workers como variables de entorno y nunca guardes claves reales en el repositorio.
+Configura los endpoints en Cloudflare Pages como variables de entorno y nunca guardes claves reales en el repositorio.
