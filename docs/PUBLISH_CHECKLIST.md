@@ -19,7 +19,8 @@
 
 - Project name: `mision-alas-para-sonar-app`.
 - Build command: `npm run build`.
-- Deploy command: `npx wrangler pages deploy dist --project-name=mision-alas-para-sonar-app`.
+- Build output directory: `dist`.
+- Deploy command: dejar vacio.
 - Branch de produccion: `main`.
 
 ## Variables de entorno

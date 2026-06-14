@@ -84,7 +84,8 @@ Luego abre `http://localhost:4321/admin/`.
 3. Configura:
    - Project name: `mision-alas-para-sonar-app`
    - Build command: `npm run build`
-   - Deploy command: `npx wrangler pages deploy dist --project-name=mision-alas-para-sonar-app`
+   - Build output directory: `dist`
+   - Deploy command: dejar vacio
    - Production branch: `main`
 4. Agrega las variables de entorno necesarias.
 5. Cada push a `main` desplegara automaticamente.
