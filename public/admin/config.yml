@@ -54,6 +54,18 @@ collections:
               - { label: "Nombre", name: "name", widget: "string" }
               - { label: "Cargo", name: "role", widget: "string" }
               - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Directiva registrada"
+            name: "board"
+            widget: "object"
+            fields:
+              - { label: "Periodo", name: "period", widget: "string" }
+              - { label: "Fuente", name: "source", widget: "string" }
+              - label: "Integrantes"
+                name: "members"
+                widget: "list"
+                fields:
+                  - { label: "Nombre", name: "name", widget: "string" }
+                  - { label: "Cargo", name: "role", widget: "string" }
           - { label: "Mensaje institucional", name: "message", widget: "text" }
       - label: "Donaciones"
         name: "donation"

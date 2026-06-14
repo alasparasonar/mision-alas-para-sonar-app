@@ -13,5 +13,15 @@
     { "name": "Voluntariado Alas", "role": "Acción comunitaria", "bio": "Personas que donan tiempo, talento y escucha para acompañar cada actividad." },
     { "name": "Aliados solidarios", "role": "Apoyo y donaciones", "bio": "Empresas, familias y organizaciones que hacen posible sostener los programas." }
   ],
+  "board": {
+    "period": "28 de febrero de 2026 al 27 de febrero de 2028",
+    "source": "Registro de directiva mediante Oficio Nro. MDH-SPPRC-DR-2026-0325-O",
+    "members": [
+      { "name": "José Gualotuña Gualotuña", "role": "Presidencia" },
+      { "name": "Ligia Elena Chanataxi Suntaxi", "role": "Vicepresidencia" },
+      { "name": "Angel Renan Maila Morales", "role": "Secretaría" },
+      { "name": "Angélica Giovanna Ñato Criollo", "role": "Tesorería" }
+    ]
+  },
   "message": "Cada aporte abre una posibilidad. En Alas para Soñar trabajamos para que la ayuda llegue con respeto, alegría y sentido de futuro."
 }

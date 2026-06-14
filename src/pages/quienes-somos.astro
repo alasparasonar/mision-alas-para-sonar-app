@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import SectionTitle from '@components/SectionTitle.astro';
 import about from '@data/about.json';
+import { BadgeCheck, CalendarDays, FileCheck, Sparkles } from '@lucide/astro';
 ---
 
 <BaseLayout title="Quiénes somos" description="Historia, misión, visión, valores y equipo de Fundación Misión Alas para Soñar.">
@@ -21,6 +22,45 @@ import about from '@data/about.json';
       <div class="rounded-3xl bg-white p-8 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
         <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-sky-deep">Visión</p>
         <p class="mt-4 text-lg leading-8 text-ink/74">{about.vision}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad wing-ribbon">
+    <div class="container-page">
+      <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-end">
+        <SectionTitle
+          eyebrow="Directiva registrada"
+          title="Liderazgo institucional para servir con orden y transparencia."
+          text="La fundación cuenta con una directiva registrada oficialmente para acompañar la gestión social, administrativa y comunitaria."
+        />
+        <div class="rounded-3xl bg-ink p-6 text-white shadow-2xl shadow-sky-deep/15">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="inline-flex items-center gap-2 rounded-full bg-sun px-4 py-2 text-sm font-extrabold text-ink">
+                <CalendarDays size={18} /> Periodo vigente
+              </p>
+              <p class="mt-4 font-display text-2xl font-bold">{about.board.period}</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-white/10 p-4 text-sm leading-6 text-white/74">
+              <FileCheck class="mb-2 text-sun" size={24} />
+              {about.board.source}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {about.board.members.map((member, index) => (
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10 transition hover:-translate-y-1">
+            <span class="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-sun/20 blur-2xl transition group-hover:scale-125"></span>
+            <span class="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cloud text-sky-deep ring-1 ring-sky-deep/10">
+              {index === 0 ? <BadgeCheck size={26} /> : <Sparkles size={24} />}
+            </span>
+            <p class="relative mt-6 text-sm font-extrabold uppercase tracking-[0.18em] text-sky-deep">{member.role}</p>
+            <h3 class="relative mt-2 font-display text-2xl font-bold leading-tight text-ink">{member.name}</h3>
+          </article>
+        ))}
       </div>
     </div>
   </section>
