@@ -9,9 +9,10 @@ interface Social {
 interface Props {
   socials: Social[];
   compact?: boolean;
+  variant?: 'light' | 'dark';
 }
 
-const { socials, compact = false } = Astro.props;
+const { socials, compact = false, variant = 'light' } = Astro.props;
 
 const meta = {
   Facebook: { icon: UsersRound, color: '#1877f2', short: 'f' },
@@ -21,7 +22,7 @@ const meta = {
 };
 ---
 
-<div class:list={['flex flex-wrap items-center gap-3', compact ? 'gap-2' : '']}>
+<div class:list={['flex flex-wrap items-center gap-3', compact ? 'gap-2' : '', variant === 'dark' ? 'max-w-sm' : '']}>
   {socials.map((social) => {
     const item = meta[social.label as keyof typeof meta];
     const Icon = item?.icon ?? ExternalLink;
@@ -33,13 +34,16 @@ const meta = {
         target="_blank"
         rel="noreferrer"
         class:list={[
-          'group inline-flex items-center border border-sky-deep/15 bg-white text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--social-color)] hover:text-[var(--social-color)]',
+          'group inline-flex items-center border shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--social-color)]',
+          variant === 'dark'
+            ? 'border-white/12 bg-white/8 text-white hover:bg-white/12'
+            : 'border-sky-deep/15 bg-white text-ink hover:text-[var(--social-color)]',
           compact ? 'h-10 w-10 justify-center rounded-full' : 'rounded-full px-4 py-3 font-extrabold',
         ]}
         style={`--social-color: ${color}`}
         aria-label={social.label}
       >
-        <Icon size={compact ? 17 : 20} aria-hidden="true" />
+        <Icon class:list={[variant === 'dark' ? 'text-[var(--social-color)]' : '']} size={compact ? 17 : 20} aria-hidden="true" />
         {compact ? <span class="sr-only">{social.label}</span> : <span class="ml-2 text-sm">{social.label}</span>}
       </a>
     );
