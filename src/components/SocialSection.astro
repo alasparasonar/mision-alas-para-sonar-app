@@ -1,0 +1,76 @@
+---
+import { Camera, CirclePlay, Music2, UsersRound } from '@lucide/astro';
+import SectionTitle from './SectionTitle.astro';
+import site from '@data/site.json';
+
+const socialMeta = {
+  Facebook: {
+    icon: UsersRound,
+    accent: '#1877f2',
+    handle: '@misionalasparasonar',
+    text: 'Comunidad, convocatorias, actividades y mensajes institucionales.',
+  },
+  Instagram: {
+    icon: Camera,
+    accent: '#e4405f',
+    handle: '@misionalasparasonar',
+    text: 'Fotos, historias y momentos cercanos de cada jornada solidaria.',
+  },
+  TikTok: {
+    icon: Music2,
+    accent: '#111827',
+    handle: '@misionalasparasonar',
+    text: 'Videos cortos para mostrar el impacto humano de la fundacion.',
+  },
+  YouTube: {
+    icon: CirclePlay,
+    accent: '#ff0033',
+    handle: '@misionalasparasonar',
+    text: 'Videos institucionales, testimonios y resumenes de proyectos.',
+  },
+};
+---
+
+<section class="section-pad bg-white">
+  <div class="container-page">
+    <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+      <SectionTitle
+        eyebrow="Redes sociales"
+        title="Sigue, comparte y ayuda a que la mision llegue mas lejos."
+        text="Cada red puede convertirse en una puerta de entrada para voluntarios, donantes y aliados."
+      />
+      <p class="rounded-3xl bg-cloud p-6 text-sm font-semibold leading-7 text-ink/68 ring-1 ring-sky-deep/10">
+        Los enlaces son editables desde el CMS en Configuracion general. Cuando tengas las URLs oficiales, solo se actualizan ahi y el sitio las toma automaticamente.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {site.socials.map((social) => {
+        const item = socialMeta[social.label as keyof typeof socialMeta];
+        const Icon = item?.icon ?? UsersRound;
+        const accent = item?.accent ?? '#087bb6';
+
+        return (
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noreferrer"
+            class="group relative overflow-hidden rounded-3xl bg-ink p-6 text-white shadow-xl shadow-sky-deep/10 transition hover:-translate-y-1"
+            style={`--social-accent: ${accent}`}
+          >
+            <span class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[var(--social-accent)] opacity-25 blur-2xl transition group-hover:scale-125"></span>
+            <span class="relative inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[var(--social-accent)]">
+              <Icon size={28} />
+            </span>
+            <p class="relative mt-8 text-sm font-extrabold uppercase tracking-[0.18em] text-white/55">{item?.handle ?? social.label}</p>
+            <h3 class="relative mt-2 font-display text-3xl font-bold">{social.label}</h3>
+            <p class="relative mt-3 text-sm leading-7 text-white/72">{item?.text ?? 'Canal oficial de la fundacion.'}</p>
+            <span class="relative mt-6 inline-flex rounded-full bg-white px-4 py-2 text-sm font-extrabold text-ink transition group-hover:bg-[var(--social-accent)] group-hover:text-white">
+              Visitar {social.label}
+            </span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

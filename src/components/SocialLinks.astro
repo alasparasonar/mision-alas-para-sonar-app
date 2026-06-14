@@ -1,5 +1,5 @@
 ---
-import { ExternalLink } from '@lucide/astro';
+import { Camera, CirclePlay, ExternalLink, Music2, UsersRound } from '@lucide/astro';
 
 interface Social {
   label: string;
@@ -13,22 +13,34 @@ interface Props {
 
 const { socials, compact = false } = Astro.props;
 
+const meta = {
+  Facebook: { icon: UsersRound, color: '#1877f2', short: 'f' },
+  Instagram: { icon: Camera, color: '#e4405f', short: 'ig' },
+  TikTok: { icon: Music2, color: '#111827', short: 'tk' },
+  YouTube: { icon: CirclePlay, color: '#ff0033', short: 'yt' },
+};
 ---
 
 <div class:list={['flex flex-wrap items-center gap-3', compact ? 'gap-2' : '']}>
   {socials.map((social) => {
+    const item = meta[social.label as keyof typeof meta];
+    const Icon = item?.icon ?? ExternalLink;
+    const color = item?.color ?? '#087bb6';
+
     return (
       <a
         href={social.url}
         target="_blank"
         rel="noreferrer"
         class:list={[
-          'inline-flex items-center justify-center rounded-full border border-sky-deep/15 bg-white text-ink transition hover:-translate-y-0.5 hover:border-sky-deep hover:text-sky-deep',
-          compact ? 'h-9 w-9' : 'h-11 w-11',
+          'group inline-flex items-center border border-sky-deep/15 bg-white text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--social-color)] hover:text-[var(--social-color)]',
+          compact ? 'h-10 w-10 justify-center rounded-full' : 'rounded-full px-4 py-3 font-extrabold',
         ]}
+        style={`--social-color: ${color}`}
         aria-label={social.label}
       >
-        <ExternalLink size={compact ? 17 : 20} aria-hidden="true" />
+        <Icon size={compact ? 17 : 20} aria-hidden="true" />
+        {compact ? <span class="sr-only">{social.label}</span> : <span class="ml-2 text-sm">{social.label}</span>}
       </a>
     );
   })}

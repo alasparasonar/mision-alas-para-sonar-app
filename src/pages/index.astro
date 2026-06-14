@@ -11,6 +11,7 @@ import NewsCard from '@components/NewsCard.astro';
 import GalleryGrid from '@components/GalleryGrid.astro';
 import VideoEmbed from '@components/VideoEmbed.astro';
 import DonationBox from '@components/DonationBox.astro';
+import SocialSection from '@components/SocialSection.astro';
 import programs from '@data/programs.json';
 import gallery from '@data/gallery.json';
 import videos from '@data/videos.json';
@@ -91,4 +92,6 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
       <DonationBox />
     </div>
   </section>
+
+  <SocialSection />
 </BaseLayout>
