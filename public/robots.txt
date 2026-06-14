@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://misionalasparasonar.org/sitemap-index.xml

@@ -1,0 +1,14 @@
+{
+  "headline": "Tu ayuda se convierte en alimento, abrigo, educacion y acompanamiento.",
+  "transparency": "Cada donacion sera registrada y comunicada en informes de transparencia. Los datos reales de cuenta, PayPal, QR o enlaces externos pueden actualizarse desde el CMS.",
+  "bank": {
+    "name": "Banco por confirmar",
+    "accountType": "Cuenta de ahorros",
+    "accountNumber": "0000000000",
+    "holder": "Fundacion Alas para Sonar",
+    "id": "RUC por confirmar"
+  },
+  "paypalUrl": "https://paypal.me/",
+  "externalDonationUrl": "",
+  "qrImage": ""
+}

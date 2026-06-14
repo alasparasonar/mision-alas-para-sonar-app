@@ -1,0 +1,35 @@
+---
+import { ExternalLink } from '@lucide/astro';
+
+interface Social {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  socials: Social[];
+  compact?: boolean;
+}
+
+const { socials, compact = false } = Astro.props;
+
+---
+
+<div class:list={['flex flex-wrap items-center gap-3', compact ? 'gap-2' : '']}>
+  {socials.map((social) => {
+    return (
+      <a
+        href={social.url}
+        target="_blank"
+        rel="noreferrer"
+        class:list={[
+          'inline-flex items-center justify-center rounded-full border border-sky-deep/15 bg-white text-ink transition hover:-translate-y-0.5 hover:border-sky-deep hover:text-sky-deep',
+          compact ? 'h-9 w-9' : 'h-11 w-11',
+        ]}
+        aria-label={social.label}
+      >
+        <ExternalLink size={compact ? 17 : 20} aria-hidden="true" />
+      </a>
+    );
+  })}
+</div>

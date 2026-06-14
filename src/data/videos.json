@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "title": "Conoce nuestra labor",
+      "description": "Video institucional de ejemplo para reemplazar por el enlace oficial de la fundacion.",
+      "embedUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    },
+    {
+      "title": "Historias de voluntariado",
+      "description": "Espacio para testimonios, actividades o transmisiones de redes sociales.",
+      "embedUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
+    },
+    {
+      "title": "Resumen de actividades",
+      "description": "Publicacion audiovisual editable desde el CMS.",
+      "embedUrl": "https://www.youtube.com/embed/jNQXAC9IVRw"
+    }
+  ]
+}

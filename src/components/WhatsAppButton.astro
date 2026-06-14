@@ -1,0 +1,17 @@
+---
+import { MessageCircle } from '@lucide/astro';
+import site from '@data/site.json';
+
+const number = import.meta.env.PUBLIC_WHATSAPP_NUMBER || site.whatsapp;
+const text = encodeURIComponent('Hola, quiero recibir informacion sobre Fundacion Alas para Sonar.');
+---
+
+<a
+  href={`https://wa.me/${number}?text=${text}`}
+  class="fixed bottom-5 right-5 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-leaf text-white shadow-2xl shadow-leaf/30 transition hover:-translate-y-1"
+  target="_blank"
+  rel="noreferrer"
+  aria-label="Escribir por WhatsApp"
+>
+  <MessageCircle size={28} aria-hidden="true" />
+</a>

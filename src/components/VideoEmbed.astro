@@ -1,0 +1,28 @@
+---
+interface Props {
+  video: {
+    title: string;
+    description: string;
+    embedUrl: string;
+  };
+}
+
+const { video } = Astro.props;
+---
+
+<article class="rounded-3xl bg-white p-4 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
+  <div class="aspect-video overflow-hidden rounded-2xl bg-ink">
+    <iframe
+      class="h-full w-full"
+      src={video.embedUrl}
+      title={video.title}
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="p-3">
+    <h3 class="font-display text-2xl font-bold text-ink">{video.title}</h3>
+    <p class="mt-2 text-sm leading-7 text-ink/68">{video.description}</p>
+  </div>
+</article>

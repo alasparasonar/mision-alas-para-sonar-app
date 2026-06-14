@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "title": "Certificado institucional",
+      "description": "Documento de ejemplo para reemplazar por archivos oficiales.",
+      "date": "2026-01-15",
+      "fileUrl": "/documentos/certificado-ejemplo.pdf"
+    },
+    {
+      "title": "Informe anual de actividades",
+      "description": "Resumen editable de proyectos, beneficiarios y donaciones recibidas.",
+      "date": "2026-02-10",
+      "fileUrl": "/documentos/informe-anual-ejemplo.pdf"
+    }
+  ]
+}

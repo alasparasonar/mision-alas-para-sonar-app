@@ -1,0 +1,57 @@
+---
+import { Ear, ClipboardCheck, Truck, HeartHandshake } from '@lucide/astro';
+
+const steps = [
+  {
+    icon: Ear,
+    label: 'Escuchamos',
+    text: 'Identificamos necesidades reales junto a familias, lideres y aliados comunitarios.',
+  },
+  {
+    icon: ClipboardCheck,
+    label: 'Organizamos',
+    text: 'Planificamos voluntariado, donaciones, rutas de entrega y seguimiento responsable.',
+  },
+  {
+    icon: Truck,
+    label: 'Llegamos',
+    text: 'Convertimos los recursos en jornadas, kits, apoyo educativo y acompanamiento.',
+  },
+  {
+    icon: HeartHandshake,
+    label: 'Acompanamos',
+    text: 'Cuidamos la relacion con la comunidad para sostener impacto, confianza y esperanza.',
+  },
+];
+---
+
+<section class="relative -mt-2 overflow-hidden bg-ink py-14 text-white">
+  <div class="aid-marquee pointer-events-none absolute inset-x-0 top-0 flex whitespace-nowrap text-7xl font-black uppercase tracking-[0.08em] text-white/[0.035]">
+    <span>solidaridad esperanza comunidad alas para sonar&nbsp;</span>
+    <span>solidaridad esperanza comunidad alas para sonar&nbsp;</span>
+  </div>
+  <div class="container-page relative z-10">
+    <div class="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
+      <div>
+        <p class="text-sm font-extrabold uppercase tracking-[0.22em] text-sun">Como trabajamos</p>
+        <h2 class="mt-3 font-display text-4xl font-bold leading-tight text-white text-balance md:text-5xl">
+          La ayuda tiene una ruta: escuchar, organizar y llegar bien.
+        </h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-4">
+        {steps.map((step) => {
+          const Icon = step.icon;
+          return (
+            <article class="aid-card rounded-3xl border border-white/10 bg-white/[0.08] p-5 backdrop-blur transition hover:-translate-y-1 hover:bg-white/[0.12]">
+              <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sun text-ink">
+                <Icon size={24} />
+              </span>
+              <h3 class="mt-5 text-lg font-extrabold">{step.label}</h3>
+              <p class="mt-3 text-sm leading-7 text-white/70">{step.text}</p>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+const data = post.data;
+---
+
+<article class="group overflow-hidden rounded-3xl bg-white shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10 transition hover:-translate-y-1">
+  <a href={`/noticias/${post.id}/`} class="block">
+    <img src={data.image} alt={`Imagen de la noticia ${data.title}`} class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+    <div class="p-6">
+      <p class="text-sm font-bold text-sky-deep">{data.date.toLocaleDateString('es-EC')}</p>
+      <h3 class="mt-2 font-display text-2xl font-bold text-ink">{data.title}</h3>
+      <p class="mt-3 text-sm leading-7 text-ink/68">{data.summary}</p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {data.tags.map((tag: string) => <span class="rounded-full bg-cloud px-3 py-1 text-xs font-bold text-ink/70">{tag}</span>)}
+      </div>
+    </div>
+  </a>
+</article>

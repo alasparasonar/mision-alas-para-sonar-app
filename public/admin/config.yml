@@ -1,0 +1,150 @@
+backend:
+  name: github
+  repo: TU_USUARIO/mision-alas-para-sonar-web
+  branch: main
+  base_url: https://TU_OAUTH_BACKEND.com
+
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: "public/uploads"
+public_folder: "/uploads"
+locale: "es"
+
+collections:
+  - name: "configuracion"
+    label: "Configuracion general"
+    files:
+      - label: "Datos de la fundacion"
+        name: "site"
+        file: "src/data/site.json"
+        fields:
+          - { label: "Nombre", name: "name", widget: "string" }
+          - { label: "Nombre legal", name: "legalName", widget: "string" }
+          - { label: "Lema", name: "tagline", widget: "string" }
+          - { label: "Descripcion", name: "description", widget: "text" }
+          - { label: "Correo", name: "email", widget: "string" }
+          - { label: "Telefono", name: "phone", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "Direccion", name: "address", widget: "string" }
+          - { label: "Mapa embebido", name: "mapEmbedUrl", widget: "string" }
+          - label: "Redes sociales"
+            name: "socials"
+            widget: "list"
+            fields:
+              - { label: "Etiqueta", name: "label", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+      - label: "Quienes somos"
+        name: "about"
+        file: "src/data/about.json"
+        fields:
+          - { label: "Historia", name: "history", widget: "text" }
+          - { label: "Mision", name: "mission", widget: "text" }
+          - { label: "Vision", name: "vision", widget: "text" }
+          - label: "Valores"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Descripcion", name: "description", widget: "text" }
+          - label: "Equipo"
+            name: "team"
+            widget: "list"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Cargo", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+          - { label: "Mensaje institucional", name: "message", widget: "text" }
+      - label: "Donaciones"
+        name: "donation"
+        file: "src/data/donation.json"
+        fields:
+          - { label: "Titular", name: "headline", widget: "text" }
+          - { label: "Transparencia", name: "transparency", widget: "text" }
+          - label: "Cuenta bancaria"
+            name: "bank"
+            widget: "object"
+            fields:
+              - { label: "Banco", name: "name", widget: "string" }
+              - { label: "Tipo", name: "accountType", widget: "string" }
+              - { label: "Numero", name: "accountNumber", widget: "string" }
+              - { label: "Titular", name: "holder", widget: "string" }
+              - { label: "Identificacion", name: "id", widget: "string" }
+          - { label: "PayPal", name: "paypalUrl", widget: "string", required: false }
+          - { label: "Link externo", name: "externalDonationUrl", widget: "string", required: false }
+          - { label: "Imagen QR", name: "qrImage", widget: "image", required: false }
+  - name: "projects"
+    label: "Proyectos"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Descripcion", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Lugar", name: "place", widget: "string" }
+      - { label: "Estado", name: "status", widget: "string" }
+      - { label: "Impacto", name: "impact", widget: "string" }
+      - { label: "Destacado", name: "featured", widget: "boolean", default: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+  - name: "news"
+    label: "Noticias y actividades"
+    folder: "src/content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Resumen", name: "summary", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Etiquetas", name: "tags", widget: "list" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+  - name: "contenido_visual"
+    label: "Programas, galeria, videos y transparencia"
+    files:
+      - label: "Areas de accion"
+        name: "programs"
+        file: "src/data/programs.json"
+        fields:
+          - label: "Programas"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "Imagen", name: "image", widget: "string" }
+      - label: "Galeria"
+        name: "gallery"
+        file: "src/data/gallery.json"
+        fields:
+          - label: "Fotos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Proyecto o actividad", name: "project", widget: "string" }
+              - { label: "Imagen", name: "image", widget: "string" }
+              - { label: "Texto alternativo", name: "alt", widget: "string" }
+      - label: "Videos"
+        name: "videos"
+        file: "src/data/videos.json"
+        fields:
+          - label: "Videos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "URL embebida", name: "embedUrl", widget: "string" }
+      - label: "Transparencia"
+        name: "transparency"
+        file: "src/data/transparency.json"
+        fields:
+          - label: "Documentos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "Fecha", name: "date", widget: "datetime" }
+              - { label: "Archivo o URL", name: "fileUrl", widget: "string" }

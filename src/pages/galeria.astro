@@ -1,0 +1,17 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import GalleryGrid from '@components/GalleryGrid.astro';
+import gallery from '@data/gallery.json';
+---
+
+<BaseLayout title="Galeria" description="Galeria de actividades y proyectos de Fundacion Alas para Sonar.">
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <SectionTitle eyebrow="Galeria" title="Imagenes de actividades, proyectos y comunidad." text="Fotos editables desde el CMS. Puedes subir archivos o usar URLs externas optimizadas." />
+      <div class="mt-10">
+        <GalleryGrid items={gallery.items} />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import about from '@data/about.json';
+---
+
+<BaseLayout title="Quienes somos" description="Historia, mision, vision, valores y equipo de Fundacion Alas para Sonar.">
+  <section class="section-pad bg-white">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <SectionTitle eyebrow="Quienes somos" title="Una fundacion para acompanar con dignidad." text={about.history} />
+      <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1300&q=85" alt="Equipo de voluntarios reunido en una actividad social" class="rounded-3xl shadow-2xl shadow-sky-deep/15" />
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-page grid gap-6 md:grid-cols-2">
+      <div class="rounded-3xl bg-white p-8 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
+        <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-sky-deep">Mision</p>
+        <p class="mt-4 text-lg leading-8 text-ink/74">{about.mission}</p>
+      </div>
+      <div class="rounded-3xl bg-white p-8 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
+        <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-sky-deep">Vision</p>
+        <p class="mt-4 text-lg leading-8 text-ink/74">{about.vision}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <SectionTitle eyebrow="Valores" title="La forma importa tanto como la ayuda." />
+      <div class="mt-10 grid gap-5 md:grid-cols-4">
+        {about.values.map((value) => (
+          <article class="rounded-3xl bg-cloud p-6">
+            <h3 class="font-display text-2xl font-bold text-ink">{value.name}</h3>
+            <p class="mt-3 text-sm leading-7 text-ink/68">{value.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-page">
+      <SectionTitle eyebrow="Equipo" title="Personas que sostienen la mision." text={about.message} />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {about.team.map((member) => (
+          <article class="rounded-3xl bg-white p-7 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
+            <h3 class="font-display text-2xl font-bold text-ink">{member.name}</h3>
+            <p class="mt-2 text-sm font-extrabold uppercase tracking-[0.14em] text-sky-deep">{member.role}</p>
+            <p class="mt-4 text-sm leading-7 text-ink/68">{member.bio}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,46 @@
+---
+import site from '@data/site.json';
+
+const endpoint = import.meta.env.PUBLIC_VOLUNTEER_FORM_ENDPOINT || '';
+---
+
+<form class="grid gap-4 rounded-3xl bg-white p-6 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10" action={endpoint || `mailto:${site.email}`} method="POST">
+  <input type="hidden" name="form_type" value="voluntariado" />
+  <div class="grid gap-4 md:grid-cols-2">
+    <div>
+      <label class="mb-2 block text-sm font-bold text-ink" for="vol-name">Nombre</label>
+      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-name" name="name" autocomplete="name" required />
+    </div>
+    <div>
+      <label class="mb-2 block text-sm font-bold text-ink" for="vol-email">Correo</label>
+      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-email" type="email" name="email" autocomplete="email" required />
+    </div>
+  </div>
+  <div class="grid gap-4 md:grid-cols-2">
+    <div>
+      <label class="mb-2 block text-sm font-bold text-ink" for="phone">Telefono</label>
+      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="phone" name="phone" autocomplete="tel" required />
+    </div>
+    <div>
+      <label class="mb-2 block text-sm font-bold text-ink" for="city">Ciudad</label>
+      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="city" name="city" autocomplete="address-level2" required />
+    </div>
+  </div>
+  <div>
+    <label class="mb-2 block text-sm font-bold text-ink" for="interest">Area de interes</label>
+    <select class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="interest" name="interest" required>
+      <option value="">Selecciona una opcion</option>
+      <option>Apoyo a ninos</option>
+      <option>Logistica de actividades</option>
+      <option>Comunicacion y redes</option>
+      <option>Gestion de donaciones</option>
+      <option>Apoyo profesional</option>
+    </select>
+  </div>
+  <div>
+    <label class="mb-2 block text-sm font-bold text-ink" for="vol-message">Mensaje</label>
+    <textarea class="min-h-36 w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-message" name="message"></textarea>
+  </div>
+  <button class="rounded-full bg-sky-deep px-6 py-4 font-extrabold text-white" type="submit">Enviar inscripcion</button>
+  <p class="text-xs leading-6 text-ink/55">Para envio real, configura PUBLIC_VOLUNTEER_FORM_ENDPOINT con el servicio elegido.</p>
+</form>

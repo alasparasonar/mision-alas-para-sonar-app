@@ -1,0 +1,37 @@
+---
+import { ShieldCheck, CreditCard, QrCode } from '@lucide/astro';
+import donation from '@data/donation.json';
+
+const donationUrl = import.meta.env.PUBLIC_DONATION_URL || donation.externalDonationUrl || donation.paypalUrl || '/contacto/';
+---
+
+<div class="grid gap-6 lg:grid-cols-[1fr_0.82fr]">
+  <div class="soft-card rounded-3xl p-8">
+    <ShieldCheck class="text-leaf" size={34} />
+    <h3 class="mt-5 font-display text-3xl font-bold text-ink">Donar con transparencia</h3>
+    <p class="mt-4 text-lg leading-8 text-ink/70">{donation.headline}</p>
+    <p class="mt-4 rounded-2xl bg-leaf/10 p-4 text-sm leading-7 text-ink/72">{donation.transparency}</p>
+    <a href={donationUrl} target={donationUrl.startsWith('http') ? '_blank' : undefined} rel="noreferrer" class="mt-6 inline-flex rounded-full bg-sun px-7 py-4 font-extrabold text-ink shadow-xl shadow-sun/20">
+      Quiero donar
+    </a>
+  </div>
+
+  <div class="grid gap-4">
+    <div class="rounded-3xl bg-white p-6 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
+      <CreditCard class="text-sky-deep" size={28} />
+      <h4 class="mt-4 text-xl font-extrabold text-ink">Transferencia bancaria</h4>
+      <dl class="mt-4 grid gap-2 text-sm text-ink/70">
+        <div><dt class="font-bold text-ink">Banco</dt><dd>{donation.bank.name}</dd></div>
+        <div><dt class="font-bold text-ink">Tipo</dt><dd>{donation.bank.accountType}</dd></div>
+        <div><dt class="font-bold text-ink">Numero</dt><dd>{donation.bank.accountNumber}</dd></div>
+        <div><dt class="font-bold text-ink">Titular</dt><dd>{donation.bank.holder}</dd></div>
+        <div><dt class="font-bold text-ink">Identificacion</dt><dd>{donation.bank.id}</dd></div>
+      </dl>
+    </div>
+    <div class="rounded-3xl bg-ink p-6 text-white shadow-xl shadow-ink/10">
+      <QrCode class="text-sun" size={28} />
+      <h4 class="mt-4 text-xl font-extrabold">PayPal, QR o WhatsApp</h4>
+      <p class="mt-2 text-sm leading-7 text-white/72">Los enlaces externos y la imagen QR se editan desde el CMS cuando la fundacion tenga sus datos definitivos.</p>
+    </div>
+  </div>
+</div>

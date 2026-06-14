@@ -1,0 +1,17 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import VideoEmbed from '@components/VideoEmbed.astro';
+import videos from '@data/videos.json';
+---
+
+<BaseLayout title="Videos" description="Videos institucionales y actividades audiovisuales de Fundacion Alas para Sonar.">
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <SectionTitle eyebrow="Videos" title="Historias y actividades para compartir." text="Inserta enlaces embebidos de YouTube, Facebook, Instagram o TikTok sin subir videos pesados al hosting." />
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        {videos.items.map((video) => <VideoEmbed video={video} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

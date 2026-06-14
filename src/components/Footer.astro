@@ -1,0 +1,52 @@
+---
+import { Mail, Phone, MapPin } from '@lucide/astro';
+import site from '@data/site.json';
+import SocialLinks from './SocialLinks.astro';
+
+const year = new Date().getFullYear();
+const links = [
+  ['Quienes somos', '/quienes-somos/'],
+  ['Proyectos', '/proyectos/'],
+  ['Galeria', '/galeria/'],
+  ['Videos', '/videos/'],
+  ['Donaciones', '/donaciones/'],
+  ['Transparencia', '/transparencia/'],
+];
+---
+
+<footer class="bg-ink text-white">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-[1.2fr_0.8fr_1fr]">
+    <div>
+      <div class="flex items-center gap-3">
+        <img src="/logo.svg" alt="" class="h-16 w-16 rounded-full bg-white" />
+        <div>
+          <p class="font-display text-2xl font-bold">{site.name}</p>
+          <p class="text-sm text-white/70">{site.tagline}</p>
+        </div>
+      </div>
+      <p class="mt-5 max-w-md text-sm leading-7 text-white/76">{site.description}</p>
+    </div>
+
+    <nav aria-label="Enlaces del pie de pagina">
+      <p class="mb-4 text-sm font-extrabold uppercase tracking-[0.18em] text-sun">Menu rapido</p>
+      <div class="grid gap-3">
+        {links.map(([label, href]) => <a class="text-sm text-white/75 hover:text-sun" href={href}>{label}</a>)}
+      </div>
+    </nav>
+
+    <div>
+      <p class="mb-4 text-sm font-extrabold uppercase tracking-[0.18em] text-sun">Contacto</p>
+      <div class="grid gap-3 text-sm text-white/76">
+        <a class="flex items-center gap-2 hover:text-sun" href={`mailto:${site.email}`}><Mail size={17} />{site.email}</a>
+        <a class="flex items-center gap-2 hover:text-sun" href={`tel:${site.phone}`}><Phone size={17} />{site.phone}</a>
+        <p class="flex items-center gap-2"><MapPin size={17} />{site.address}</p>
+      </div>
+      <div class="mt-6">
+        <SocialLinks socials={site.socials} compact />
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-sm text-white/64">
+    Fundacion Alas para Sonar — Todos los derechos reservados. © {year}
+  </div>
+</footer>

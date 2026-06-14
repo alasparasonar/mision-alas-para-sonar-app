@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Proyectos" description="Proyectos sociales administrables de Fundacion Alas para Sonar.">
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <SectionTitle eyebrow="Proyectos" title="Cada iniciativa tiene un proposito y un impacto." text="Listado editable desde Decap CMS con estado, fecha, lugar e impacto." />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

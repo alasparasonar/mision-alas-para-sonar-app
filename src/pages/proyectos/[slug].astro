@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({ params: { slug: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout title={project.data.title} description={project.data.description} image={project.data.image}>
+  <article class="section-pad bg-white">
+    <div class="container-page max-w-4xl">
+      <a href="/proyectos/" class="text-sm font-bold text-sky-deep">Volver a proyectos</a>
+      <h1 class="mt-5 font-display text-5xl font-bold leading-tight text-ink">{project.data.title}</h1>
+      <p class="mt-5 text-xl leading-8 text-ink/70">{project.data.description}</p>
+      <img src={project.data.image} alt={`Imagen del proyecto ${project.data.title}`} class="mt-8 aspect-[16/9] w-full rounded-3xl object-cover shadow-2xl shadow-sky-deep/15" />
+      <div class="mt-8 grid gap-4 rounded-3xl bg-cloud p-6 text-sm font-semibold text-ink/72 md:grid-cols-4">
+        <p><span class="block text-ink">Fecha</span>{project.data.date.toLocaleDateString('es-EC')}</p>
+        <p><span class="block text-ink">Lugar</span>{project.data.place}</p>
+        <p><span class="block text-ink">Estado</span>{project.data.status}</p>
+        <p><span class="block text-ink">Impacto</span>{project.data.impact}</p>
+      </div>
+      <div class="prose prose-lg mt-10 max-w-none text-ink/78">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

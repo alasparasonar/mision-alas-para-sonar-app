@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-sky-deep: #087bb6;
+  --color-sky-bright: #12b7e8;
+  --color-sun: #ffd12a;
+  --color-coral: #e7333f;
+  --color-ink: #14304a;
+  --color-cloud: #f6fbff;
+  --color-leaf: #2ca66f;
+}
+
+:root {
+  color-scheme: light;
+  --shadow-soft: 0 22px 70px rgb(8 123 182 / 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: #14304a;
+  background: #f6fbff;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:focus-visible {
+  outline: 3px solid #ffd12a;
+  outline-offset: 3px;
+}
+
+.container-page {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.section-pad {
+  padding-block: clamp(64px, 8vw, 112px);
+}
+
+.soft-card {
+  border: 1px solid rgb(8 123 182 / 0.12);
+  background: rgb(255 255 255 / 0.86);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.wing-ribbon {
+  position: relative;
+  overflow: hidden;
+}
+
+.wing-ribbon::before {
+  content: "";
+  position: absolute;
+  inset: auto -12% 0 -12%;
+  height: 110px;
+  background:
+    radial-gradient(65% 150% at 10% 100%, rgb(255 209 42 / 0.45), transparent 62%),
+    linear-gradient(100deg, transparent 10%, #ffd12a 11% 18%, transparent 19% 27%, #1436b8 28% 36%, transparent 37% 45%, #e7333f 46% 53%, transparent 54%);
+  opacity: 0.34;
+  transform: skewY(-3deg);
+  pointer-events: none;
+}
+
+.hero-stage .wing-ribbon::before,
+.hero-stage::before {
+  animation: ribbon-flow 12s ease-in-out infinite alternate;
+}
+
+.carousel-slide {
+  opacity: 0;
+  transform: scale(1.04);
+}
+
+.carousel-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-thumb.is-active {
+  box-shadow: 0 14px 34px rgb(8 123 182 / 0.18);
+}
+
+.carousel-progress {
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.carousel-progress.is-running {
+  animation: carousel-progress 5.2s linear forwards;
+}
+
+.aid-marquee {
+  animation: marquee 24s linear infinite;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: rise 680ms ease both;
+  }
+
+  .hero-glow {
+    animation: float-glow 7s ease-in-out infinite;
+  }
+
+  .hero-glow-two {
+    animation-delay: -2.4s;
+  }
+
+  .aid-card {
+    animation: card-float 6s ease-in-out infinite;
+  }
+
+  .aid-card:nth-child(2) {
+    animation-delay: -1.4s;
+  }
+
+  .aid-card:nth-child(3) {
+    animation-delay: -2.8s;
+  }
+
+  .aid-card:nth-child(4) {
+    animation-delay: -4.2s;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float-glow {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(18px, -22px, 0) scale(1.08);
+    }
+  }
+
+  @keyframes card-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes ribbon-flow {
+    from {
+      transform: skewY(-3deg) translateX(-2%);
+    }
+    to {
+      transform: skewY(-4deg) translateX(3%);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes carousel-progress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aid-marquee {
+    animation: none;
+  }
+}

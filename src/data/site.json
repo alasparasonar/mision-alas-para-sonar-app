@@ -1,0 +1,18 @@
+{
+  "name": "Fundacion Alas para Sonar",
+  "legalName": "Fundacion Mision Alas para Sonar",
+  "tagline": "Mision ayudar a personas vulnerables",
+  "description": "Organizacion sin fines de lucro que acompana a ninos, familias y comunidades vulnerables con programas sociales, educativos y solidarios.",
+  "email": "contacto@misionalasparasonar.org",
+  "phone": "+593 99 999 9999",
+  "whatsapp": "593999999999",
+  "address": "Ecuador, direccion por confirmar",
+  "mapEmbedUrl": "https://www.google.com/maps?q=Ecuador&output=embed",
+  "domain": "misionalasparasonar.org",
+  "socials": [
+    { "label": "Facebook", "url": "https://facebook.com/misionalasparasonar" },
+    { "label": "Instagram", "url": "https://instagram.com/misionalasparasonar" },
+    { "label": "TikTok", "url": "https://tiktok.com/@misionalasparasonar" },
+    { "label": "YouTube", "url": "https://youtube.com/@misionalasparasonar" }
+  ]
+}

@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import ImpactStats from '@components/ImpactStats.astro';
+import HelpJourney from '@components/HelpJourney.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+import ProgramCard from '@components/ProgramCard.astro';
+import ProjectCard from '@components/ProjectCard.astro';
+import NewsCard from '@components/NewsCard.astro';
+import GalleryGrid from '@components/GalleryGrid.astro';
+import VideoEmbed from '@components/VideoEmbed.astro';
+import DonationBox from '@components/DonationBox.astro';
+import programs from '@data/programs.json';
+import gallery from '@data/gallery.json';
+import videos from '@data/videos.json';
+import about from '@data/about.json';
+
+const projects = (await getCollection('projects')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout>
+  <Hero />
+  <ImpactStats />
+  <HelpJourney />
+
+  <section class="section-pad">
+    <div class="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <SectionTitle eyebrow="Nuestra mision" title="Ayudar con orden, cercania y esperanza." text={about.mission} />
+      <div class="rounded-3xl bg-white p-8 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
+        <p class="font-display text-3xl font-bold leading-tight text-ink">{about.message}</p>
+        <p class="mt-5 leading-8 text-ink/70">{about.history}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <SectionTitle eyebrow="Que hacemos" title="Programas pensados para llegar donde mas se necesita." text="Estas areas son editables y pueden crecer segun las actividades reales de la fundacion." />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {programs.items.map((program) => <ProgramCard program={program} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad wing-ribbon">
+    <div class="container-page">
+      <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <SectionTitle eyebrow="Proyectos" title="Acciones con impacto visible." text="Cada proyecto puede administrarse desde el CMS con fecha, lugar, estado e impacto." />
+        <a href="/proyectos/" class="self-start rounded-full bg-sky-deep px-6 py-3 font-extrabold text-white md:self-auto">Ver proyectos</a>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {projects.slice(0, 3).map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <SectionTitle eyebrow="Galeria" title="Momentos que cuentan la historia del servicio." align="center" />
+      <div class="mt-10">
+        <GalleryGrid items={gallery.items.slice(0, 6)} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-page">
+      <SectionTitle eyebrow="Videos" title="La fundacion tambien se cuenta en movimiento." text="Puedes reemplazar estos videos por enlaces de YouTube, Facebook, Instagram o TikTok embebidos." />
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        {videos.items.map((video) => <VideoEmbed video={video} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad bg-white">
+    <div class="container-page">
+      <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <SectionTitle eyebrow="Noticias" title="Actividades recientes y novedades." />
+        <a href="/noticias/" class="self-start rounded-full bg-sun px-6 py-3 font-extrabold text-ink md:self-auto">Ver noticias</a>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {news.slice(0, 3).map((post) => <NewsCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-page">
+      <DonationBox />
+    </div>
+  </section>
+</BaseLayout>
