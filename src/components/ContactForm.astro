@@ -38,6 +38,10 @@ const formElementId = 'contact-form';
   <form id={formElementId} class="grid gap-4" action={endpoint || `mailto:${site.email}`} method="POST">
     <input type="hidden" name="form_type" value="contacto" />
     <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio web" />
+    <div class="formspree-honeypot" aria-hidden="true">
+      <label for="company-contact">No llenar este campo</label>
+      <input id="company-contact" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+    </div>
     <div>
       <label class="mb-2 block text-sm font-bold text-ink" for="name">Nombre</label>
       <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="name" name="name" autocomplete="name" required data-fs-field />

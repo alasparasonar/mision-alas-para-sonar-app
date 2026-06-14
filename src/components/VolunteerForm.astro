@@ -38,6 +38,10 @@ const formElementId = 'volunteer-form';
   <form id={formElementId} class="grid gap-4" action={endpoint || `mailto:${site.email}`} method="POST">
     <input type="hidden" name="form_type" value="voluntariado" />
     <input type="hidden" name="_subject" value="Nueva inscripción de voluntariado desde el sitio web" />
+    <div class="formspree-honeypot" aria-hidden="true">
+      <label for="company-volunteer">No llenar este campo</label>
+      <input id="company-volunteer" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+    </div>
     <div class="grid gap-4 md:grid-cols-2">
       <div>
         <label class="mb-2 block text-sm font-bold text-ink" for="vol-name">Nombre</label>

@@ -203,6 +203,14 @@ img {
   visibility: hidden;
 }
 
+.formspree-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 [data-fs-field][aria-invalid='true'] {
   border-color: rgb(231 51 63 / 0.45);
   box-shadow: 0 0 0 3px rgb(231 51 63 / 0.12);
