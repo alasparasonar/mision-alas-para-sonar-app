@@ -12,21 +12,21 @@ locale: "es"
 
 collections:
   - name: "configuracion"
-    label: "Configuracion general"
+    label: "Configuración general"
     files:
-      - label: "Datos de la fundacion"
+      - label: "Datos de la fundación"
         name: "site"
         file: "src/data/site.json"
         fields:
           - { label: "Nombre", name: "name", widget: "string" }
           - { label: "Nombre legal", name: "legalName", widget: "string" }
           - { label: "Lema", name: "tagline", widget: "string" }
-          - { label: "Descripcion", name: "description", widget: "text" }
+          - { label: "Descripción", name: "description", widget: "text" }
           - { label: "Logo", name: "logo", widget: "image" }
           - { label: "Correo", name: "email", widget: "string" }
-          - { label: "Telefono", name: "phone", widget: "string" }
+          - { label: "Teléfono", name: "phone", widget: "string" }
           - { label: "WhatsApp", name: "whatsapp", widget: "string" }
-          - { label: "Direccion", name: "address", widget: "string" }
+          - { label: "Dirección", name: "address", widget: "string" }
           - { label: "Mapa embebido", name: "mapEmbedUrl", widget: "string" }
           - label: "Redes sociales"
             name: "socials"
@@ -34,19 +34,19 @@ collections:
             fields:
               - { label: "Etiqueta", name: "label", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-      - label: "Quienes somos"
+      - label: "Quiénes somos"
         name: "about"
         file: "src/data/about.json"
         fields:
           - { label: "Historia", name: "history", widget: "text" }
-          - { label: "Mision", name: "mission", widget: "text" }
-          - { label: "Vision", name: "vision", widget: "text" }
+          - { label: "Misión", name: "mission", widget: "text" }
+          - { label: "Visión", name: "vision", widget: "text" }
           - label: "Valores"
             name: "values"
             widget: "list"
             fields:
               - { label: "Nombre", name: "name", widget: "string" }
-              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "Descripción", name: "description", widget: "text" }
           - label: "Equipo"
             name: "team"
             widget: "list"
@@ -67,9 +67,9 @@ collections:
             fields:
               - { label: "Banco", name: "name", widget: "string" }
               - { label: "Tipo", name: "accountType", widget: "string" }
-              - { label: "Numero", name: "accountNumber", widget: "string" }
+              - { label: "Número", name: "accountNumber", widget: "string" }
               - { label: "Titular", name: "holder", widget: "string" }
-              - { label: "Identificacion", name: "id", widget: "string" }
+              - { label: "Identificación", name: "id", widget: "string" }
           - { label: "PayPal", name: "paypalUrl", widget: "string", required: false }
           - { label: "Link externo", name: "externalDonationUrl", widget: "string", required: false }
           - { label: "Imagen QR", name: "qrImage", widget: "image", required: false }
@@ -79,8 +79,8 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Titulo", name: "title", widget: "string" }
-      - { label: "Descripcion", name: "description", widget: "text" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
       - { label: "Imagen", name: "image", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime" }
       - { label: "Lugar", name: "place", widget: "string" }
@@ -94,16 +94,16 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Título", name: "title", widget: "string" }
       - { label: "Resumen", name: "summary", widget: "text" }
       - { label: "Imagen", name: "image", widget: "string" }
       - { label: "Fecha", name: "date", widget: "datetime" }
       - { label: "Etiquetas", name: "tags", widget: "list" }
       - { label: "Contenido", name: "body", widget: "markdown" }
   - name: "contenido_visual"
-    label: "Programas, galeria, videos y transparencia"
+    label: "Programas, galería, videos y transparencia"
     files:
-      - label: "Areas de accion"
+      - label: "Áreas de acción"
         name: "programs"
         file: "src/data/programs.json"
         fields:
@@ -111,10 +111,10 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
-              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descripción", name: "description", widget: "text" }
               - { label: "Imagen", name: "image", widget: "string" }
-      - label: "Galeria"
+      - label: "Galería"
         name: "gallery"
         file: "src/data/gallery.json"
         fields:
@@ -122,7 +122,7 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
               - { label: "Proyecto o actividad", name: "project", widget: "string" }
               - { label: "Imagen", name: "image", widget: "string" }
               - { label: "Texto alternativo", name: "alt", widget: "string" }
@@ -134,8 +134,8 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
-              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descripción", name: "description", widget: "text" }
               - { label: "URL embebida", name: "embedUrl", widget: "string" }
       - label: "Transparencia"
         name: "transparency"
@@ -145,7 +145,7 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              - { label: "Titulo", name: "title", widget: "string" }
-              - { label: "Descripcion", name: "description", widget: "text" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descripción", name: "description", widget: "text" }
               - { label: "Fecha", name: "date", widget: "datetime" }
               - { label: "Archivo o URL", name: "fileUrl", widget: "string" }

@@ -4,8 +4,8 @@ import site from '@data/site.json';
 
 const nav = [
   { label: 'Inicio', href: '/' },
-  { label: 'Quienes somos', href: '/quienes-somos/' },
-  { label: 'Que hacemos', href: '/que-hacemos/' },
+  { label: 'Quiénes somos', href: '/quienes-somos/' },
+  { label: 'Qué hacemos', href: '/que-hacemos/' },
   { label: 'Proyectos', href: '/proyectos/' },
   { label: 'Noticias', href: '/noticias/' },
   { label: 'Contacto', href: '/contacto/' },
@@ -21,7 +21,7 @@ const nav = [
       </span>
     </a>
 
-    <nav class="hidden items-center gap-6 lg:flex" aria-label="Menu principal">
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Menú principal">
       {nav.map((item) => (
         <a class="text-sm font-semibold text-ink/78 transition hover:text-sky-deep" href={item.href}>{item.label}</a>
       ))}
@@ -39,17 +39,17 @@ const nav = [
     <button id="menu-toggle" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-deep/20 bg-white lg:hidden" aria-controls="mobile-menu" aria-expanded="false">
       <Menu class="menu-open" size={22} aria-hidden="true" />
       <X class="menu-close hidden" size={22} aria-hidden="true" />
-      <span class="sr-only">Abrir menu</span>
+      <span class="sr-only">Abrir menú</span>
     </button>
   </div>
 
   <div id="mobile-menu" class="hidden border-t border-sky-deep/10 bg-white lg:hidden">
-    <nav class="container-page grid gap-1 py-4" aria-label="Menu movil">
+    <nav class="container-page grid gap-1 py-4" aria-label="Menú móvil">
       {nav.map((item) => (
         <a class="rounded-xl px-3 py-3 font-semibold text-ink/80 hover:bg-cloud hover:text-sky-deep" href={item.href}>{item.label}</a>
       ))}
-      <a class="mt-2 rounded-full bg-sun px-5 py-3 text-center font-extrabold text-ink" href="/donaciones/">Haz una donacion</a>
-      <a class="rounded-full bg-sky-deep px-5 py-3 text-center font-extrabold text-white" href="/voluntariado/">Se voluntario</a>
+      <a class="mt-2 rounded-full bg-sun px-5 py-3 text-center font-extrabold text-ink" href="/donaciones/">Haz una donación</a>
+      <a class="rounded-full bg-sky-deep px-5 py-3 text-center font-extrabold text-white" href="/voluntariado/">Sé voluntario</a>
     </nav>
   </div>
 </header>

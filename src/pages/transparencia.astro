@@ -5,10 +5,10 @@ import SectionTitle from '@components/SectionTitle.astro';
 import documents from '@data/transparency.json';
 ---
 
-<BaseLayout title="Transparencia" description="Documentos, informes y rendicion de cuentas de Fundación Misión Alas para Soñar.">
+<BaseLayout title="Transparencia" description="Documentos, informes y rendición de cuentas de Fundación Misión Alas para Soñar.">
   <section class="section-pad bg-white">
     <div class="container-page">
-      <SectionTitle eyebrow="Transparencia" title="Rendicion de cuentas y documentos institucionales." text="Espacio administrable para informes, certificados, memorias anuales y documentos oficiales." />
+      <SectionTitle eyebrow="Transparencia" title="Rendición de cuentas y documentos institucionales." text="Espacio administrable para informes, certificados, memorias anuales y documentos oficiales." />
       <div class="mt-10 grid gap-5 md:grid-cols-2">
         {documents.items.map((doc) => (
           <article class="rounded-3xl bg-cloud p-6 ring-1 ring-sky-deep/10">

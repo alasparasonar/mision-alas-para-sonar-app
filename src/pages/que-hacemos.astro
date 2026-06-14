@@ -5,10 +5,10 @@ import ProgramCard from '@components/ProgramCard.astro';
 import programs from '@data/programs.json';
 ---
 
-<BaseLayout title="Que hacemos" description="Programas y areas de accion social de Fundacion Misión Alas para Soñar.">
+<BaseLayout title="Qué hacemos" description="Programas y áreas de acción social de Fundación Misión Alas para Soñar.">
   <section class="section-pad bg-white">
     <div class="container-page">
-      <SectionTitle eyebrow="Que hacemos" title="Ayuda social organizada en programas claros." text="La fundacion puede actualizar estas areas de accion a medida que crecen sus actividades, aliados y comunidades atendidas." align="center" />
+      <SectionTitle eyebrow="Qué hacemos" title="Ayuda social organizada en programas claros." text="La fundación puede actualizar estas áreas de acción a medida que crecen sus actividades, aliados y comunidades atendidas." align="center" />
       <div class="mt-12 grid gap-6 md:grid-cols-2">
         {programs.items.map((program) => <ProgramCard program={program} />)}
       </div>

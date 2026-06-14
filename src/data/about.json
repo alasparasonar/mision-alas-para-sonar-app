@@ -1,17 +1,17 @@
 {
-  "history": "Fundacion Alas para Sonar nace del compromiso de tender la mano a quienes atraviesan momentos dificiles. Su labor se centra en acompanar con dignidad, cercania y esperanza a personas vulnerables, articulando ayuda comunitaria, voluntariado y proyectos de transformacion social.",
-  "mission": "Acompanamos a ninos, familias y comunidades vulnerables mediante acciones solidarias, programas de apoyo y espacios de cuidado que devuelven esperanza y fortalecen oportunidades.",
-  "vision": "Ser una fundacion reconocida por su trabajo humano, transparente y sostenible, capaz de movilizar voluntades para que mas personas puedan imaginar y construir un futuro mejor.",
+  "history": "Fundación Misión Alas para Soñar nace del compromiso de tender la mano a quienes atraviesan momentos difíciles. Su labor se centra en acompañar con dignidad, cercanía y esperanza a personas vulnerables, articulando ayuda comunitaria, voluntariado y proyectos de transformación social.",
+  "mission": "Acompañamos a niños, familias y comunidades vulnerables mediante acciones solidarias, programas de apoyo y espacios de cuidado que devuelven esperanza y fortalecen oportunidades.",
+  "vision": "Ser una fundación reconocida por su trabajo humano, transparente y sostenible, capaz de movilizar voluntades para que más personas puedan imaginar y construir un futuro mejor.",
   "values": [
     { "name": "Solidaridad", "description": "Actuamos con sensibilidad ante las necesidades reales de las personas." },
     { "name": "Transparencia", "description": "Cuidamos cada recurso recibido y comunicamos el impacto con responsabilidad." },
-    { "name": "Dignidad", "description": "Acompanamos sin juzgar, reconociendo la historia y el valor de cada persona." },
+    { "name": "Dignidad", "description": "Acompañamos sin juzgar, reconociendo la historia y el valor de cada persona." },
     { "name": "Comunidad", "description": "Creemos en la fuerza de vecinos, voluntarios, aliados y familias trabajando juntos." }
   ],
   "team": [
-    { "name": "Directiva de la fundacion", "role": "Gestion institucional", "bio": "Equipo responsable de coordinar proyectos, alianzas y rendicion de cuentas." },
-    { "name": "Voluntariado Alas", "role": "Accion comunitaria", "bio": "Personas que donan tiempo, talento y escucha para acompanar cada actividad." },
+    { "name": "Directiva de la fundación", "role": "Gestión institucional", "bio": "Equipo responsable de coordinar proyectos, alianzas y rendición de cuentas." },
+    { "name": "Voluntariado Alas", "role": "Acción comunitaria", "bio": "Personas que donan tiempo, talento y escucha para acompañar cada actividad." },
     { "name": "Aliados solidarios", "role": "Apoyo y donaciones", "bio": "Empresas, familias y organizaciones que hacen posible sostener los programas." }
   ],
-  "message": "Cada aporte abre una posibilidad. En Alas para Sonar trabajamos para que la ayuda llegue con respeto, alegria y sentido de futuro."
+  "message": "Cada aporte abre una posibilidad. En Alas para Soñar trabajamos para que la ayuda llegue con respeto, alegría y sentido de futuro."
 }

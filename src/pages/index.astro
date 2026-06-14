@@ -30,7 +30,7 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
 
   <section class="section-pad">
     <div class="container-page grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-      <SectionTitle eyebrow="Nuestra mision" title="Ayudar con orden, cercania y esperanza." text={about.mission} />
+      <SectionTitle eyebrow="Nuestra misión" title="Ayudar con orden, cercanía y esperanza." text={about.mission} />
       <div class="rounded-3xl bg-white p-8 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10">
         <p class="font-display text-3xl font-bold leading-tight text-ink">{about.message}</p>
         <p class="mt-5 leading-8 text-ink/70">{about.history}</p>
@@ -40,7 +40,7 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
 
   <section class="section-pad bg-white">
     <div class="container-page">
-      <SectionTitle eyebrow="Que hacemos" title="Programas pensados para llegar donde mas se necesita." text="Estas areas son editables y pueden crecer segun las actividades reales de la fundacion." />
+      <SectionTitle eyebrow="Qué hacemos" title="Programas pensados para llegar donde más se necesita." text="Estas áreas son editables y pueden crecer según las actividades reales de la fundación." />
       <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {programs.items.map((program) => <ProgramCard program={program} />)}
       </div>
@@ -61,7 +61,7 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
 
   <section class="section-pad bg-white">
     <div class="container-page">
-      <SectionTitle eyebrow="Galeria" title="Momentos que cuentan la historia del servicio." align="center" />
+      <SectionTitle eyebrow="Galería" title="Momentos que cuentan la historia del servicio." align="center" />
       <div class="mt-10">
         <GalleryGrid items={gallery.items.slice(0, 6)} />
       </div>
@@ -70,7 +70,7 @@ const news = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() 
 
   <section class="section-pad">
     <div class="container-page">
-      <SectionTitle eyebrow="Videos" title="La fundacion tambien se cuenta en movimiento." text="Puedes reemplazar estos videos por enlaces de YouTube, Facebook, Instagram o TikTok embebidos." />
+      <SectionTitle eyebrow="Videos" title="La fundación también se cuenta en movimiento." text="Puedes reemplazar estos videos por enlaces de YouTube, Facebook, Instagram o TikTok embebidos." />
       <div class="mt-10 grid gap-6 lg:grid-cols-3">
         {videos.items.map((video) => <VideoEmbed video={video} />)}
       </div>

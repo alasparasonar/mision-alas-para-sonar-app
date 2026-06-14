@@ -1,22 +1,22 @@
 {
   "items": [
     {
-      "title": "Apoyo a la ninez",
-      "description": "Jornadas de acompanamiento, kits escolares, recreacion y espacios seguros para ninos y ninas.",
+      "title": "Apoyo a la niñez",
+      "description": "Jornadas de acompañamiento, kits escolares, recreación y espacios seguros para niños y niñas.",
       "image": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "title": "Familias y comunidad",
-      "description": "Acciones de ayuda alimentaria, orientacion, escucha y fortalecimiento de redes barriales.",
+      "description": "Acciones de ayuda alimentaria, orientación, escucha y fortalecimiento de redes barriales.",
       "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "title": "Voluntariado solidario",
-      "description": "Convocatorias para personas que desean servir con tiempo, habilidades profesionales o apoyo logistico.",
+      "description": "Convocatorias para personas que desean servir con tiempo, habilidades profesionales o apoyo logístico.",
       "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80"
     },
     {
-      "title": "Educacion y esperanza",
+      "title": "Educación y esperanza",
       "description": "Actividades formativas, charlas, apoyo educativo y encuentros que abren oportunidades.",
       "image": "https://images.unsplash.com/photo-1497486751825-1233686d5d80?auto=format&fit=crop&w=1200&q=80"
     }

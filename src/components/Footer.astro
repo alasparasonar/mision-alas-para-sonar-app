@@ -5,9 +5,9 @@ import SocialLinks from './SocialLinks.astro';
 
 const year = new Date().getFullYear();
 const links = [
-  ['Quienes somos', '/quienes-somos/'],
+  ['Quiénes somos', '/quienes-somos/'],
   ['Proyectos', '/proyectos/'],
-  ['Galeria', '/galeria/'],
+  ['Galería', '/galeria/'],
   ['Videos', '/videos/'],
   ['Donaciones', '/donaciones/'],
   ['Transparencia', '/transparencia/'],
@@ -27,8 +27,8 @@ const links = [
       <p class="mt-5 max-w-md text-sm leading-7 text-white/76">{site.description}</p>
     </div>
 
-    <nav aria-label="Enlaces del pie de pagina">
-      <p class="mb-4 text-sm font-extrabold uppercase tracking-[0.18em] text-sun">Menu rapido</p>
+    <nav aria-label="Enlaces del pie de página">
+      <p class="mb-4 text-sm font-extrabold uppercase tracking-[0.18em] text-sun">Menú rápido</p>
       <div class="grid gap-3">
         {links.map(([label, href]) => <a class="text-sm text-white/75 hover:text-sun" href={href}>{label}</a>)}
       </div>
@@ -47,6 +47,6 @@ const links = [
     </div>
   </div>
   <div class="border-t border-white/10 py-5 text-center text-sm text-white/64">
-    Fundacion Misión Alas para Soñar — Todos los derechos reservados. © {year}
+    Fundación Misión Alas para Soñar — Todos los derechos reservados. © {year}
   </div>
 </footer>

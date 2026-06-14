@@ -23,15 +23,15 @@ const donationUrl = import.meta.env.PUBLIC_DONATION_URL || donation.externalDona
       <dl class="mt-4 grid gap-2 text-sm text-ink/70">
         <div><dt class="font-bold text-ink">Banco</dt><dd>{donation.bank.name}</dd></div>
         <div><dt class="font-bold text-ink">Tipo</dt><dd>{donation.bank.accountType}</dd></div>
-        <div><dt class="font-bold text-ink">Numero</dt><dd>{donation.bank.accountNumber}</dd></div>
+        <div><dt class="font-bold text-ink">Número</dt><dd>{donation.bank.accountNumber}</dd></div>
         <div><dt class="font-bold text-ink">Titular</dt><dd>{donation.bank.holder}</dd></div>
-        <div><dt class="font-bold text-ink">Identificacion</dt><dd>{donation.bank.id}</dd></div>
+        <div><dt class="font-bold text-ink">Identificación</dt><dd>{donation.bank.id}</dd></div>
       </dl>
     </div>
     <div class="rounded-3xl bg-ink p-6 text-white shadow-xl shadow-ink/10">
       <QrCode class="text-sun" size={28} />
       <h4 class="mt-4 text-xl font-extrabold">PayPal, QR o WhatsApp</h4>
-      <p class="mt-2 text-sm leading-7 text-white/72">Los enlaces externos y la imagen QR se editan desde el CMS cuando la fundacion tenga sus datos definitivos.</p>
+      <p class="mt-2 text-sm leading-7 text-white/72">Los enlaces externos y la imagen QR se editan desde el CMS cuando la fundación tenga sus datos definitivos.</p>
     </div>
   </div>
 </div>
