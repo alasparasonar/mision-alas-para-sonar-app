@@ -8,7 +8,7 @@ Este sitio usa Decap CMS para editar contenido sin tocar codigo.
 2. Inicia sesion con la cuenta autorizada de GitHub.
 3. Edita la seccion necesaria.
 4. Guarda y publica.
-5. Cloudflare Pages publicara el cambio automaticamente cuando el CMS cree el cambio en `main`.
+5. Cloudflare Workers publicara el cambio automaticamente cuando el CMS cree el cambio en `main`.
 
 ## Que se puede editar
 
