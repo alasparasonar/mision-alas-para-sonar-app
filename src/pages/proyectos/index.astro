@@ -7,7 +7,7 @@ import ProjectCard from '@components/ProjectCard.astro';
 const projects = (await getCollection('projects')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout title="Proyectos" description="Proyectos sociales administrables de Fundacion Alas para Sonar.">
+<BaseLayout title="Proyectos" description="Proyectos sociales administrables de Fundación Misión Alas para Soñar.">
   <section class="section-pad bg-white">
     <div class="container-page">
       <SectionTitle eyebrow="Proyectos" title="Cada iniciativa tiene un proposito y un impacto." text="Listado editable desde Decap CMS con estado, fecha, lugar e impacto." />
