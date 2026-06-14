@@ -1,11 +1,12 @@
 ---
 import site from '@data/site.json';
 
-const endpoint = import.meta.env.PUBLIC_VOLUNTEER_FORM_ENDPOINT || '';
+const endpoint = import.meta.env.PUBLIC_VOLUNTEER_FORM_ENDPOINT || 'https://formspree.io/f/meewvpbp';
 ---
 
 <form class="grid gap-4 rounded-3xl bg-white p-6 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10" action={endpoint || `mailto:${site.email}`} method="POST">
   <input type="hidden" name="form_type" value="voluntariado" />
+  <input type="hidden" name="_subject" value="Nueva inscripción de voluntariado desde el sitio web" />
   <div class="grid gap-4 md:grid-cols-2">
     <div>
       <label class="mb-2 block text-sm font-bold text-ink" for="vol-name">Nombre</label>
@@ -42,5 +43,5 @@ const endpoint = import.meta.env.PUBLIC_VOLUNTEER_FORM_ENDPOINT || '';
     <textarea class="min-h-36 w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-message" name="message"></textarea>
   </div>
   <button class="rounded-full bg-sky-deep px-6 py-4 font-extrabold text-white" type="submit">Enviar inscripción</button>
-  <p class="text-xs leading-6 text-ink/55">Para envío real, configura PUBLIC_VOLUNTEER_FORM_ENDPOINT con el servicio elegido.</p>
+  <p class="text-xs leading-6 text-ink/55">Este formulario también está conectado con Formspree y enviará las postulaciones al correo configurado en ese servicio.</p>
 </form>
