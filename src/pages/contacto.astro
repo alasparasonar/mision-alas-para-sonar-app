@@ -15,7 +15,7 @@ import site from '@data/site.json';
         <div class="mt-8 grid gap-4">
           <a class="flex items-center gap-3 rounded-2xl bg-cloud p-4 font-semibold text-ink" href={`mailto:${site.email}`}><Mail class="text-sky-deep" /> {site.email}</a>
           <a class="flex items-center gap-3 rounded-2xl bg-cloud p-4 font-semibold text-ink" href={`tel:${site.phone}`}><Phone class="text-sky-deep" /> {site.phone}</a>
-          <p class="flex items-center gap-3 rounded-2xl bg-cloud p-4 font-semibold text-ink"><MapPin class="text-sky-deep" /> {site.address}</p>
+          <p class="flex items-start gap-3 rounded-2xl bg-cloud p-4 font-semibold whitespace-pre-line text-ink"><MapPin class="mt-1 shrink-0 text-sky-deep" /> {site.address}</p>
         </div>
         <div class="mt-6">
           <SocialLinks socials={site.socials} />

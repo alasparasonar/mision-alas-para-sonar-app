@@ -7,8 +7,8 @@
   "email": "contacto@misionalasparasonar.org",
   "phone": "098 247 0423",
   "whatsapp": "593982470423",
-  "address": "Calle Tupac Yupanqui N26-70, parroquia Amaguaña, cantón Quito, provincia de Pichincha, Ecuador",
-  "mapEmbedUrl": "https://www.google.com/maps?q=Calle+Tupac+Yupanqui+N26-70,+Amagua%C3%B1a,+Quito,+Pichincha,+Ecuador&output=embed",
+  "address": "Calle Tupac Yupanqui N26-70\nParroquia Amaguaña\nCantón Quito\nProvincia de Pichincha, Ecuador",
+  "mapEmbedUrl": "https://www.google.com/maps?q=-0.342988,-78.477740&z=17&output=embed",
   "domain": "misionalasparasonar.org",
   "socials": [
     { "label": "Facebook", "url": "https://facebook.com/misionalasparasonar" },

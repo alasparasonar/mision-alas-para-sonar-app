@@ -39,7 +39,7 @@ const links = [
       <div class="grid gap-3 text-sm text-white/76">
         <a class="flex items-center gap-2 hover:text-sun" href={`mailto:${site.email}`}><Mail size={17} />{site.email}</a>
         <a class="flex items-center gap-2 hover:text-sun" href={`tel:${site.phone}`}><Phone size={17} />{site.phone}</a>
-        <p class="flex items-center gap-2"><MapPin size={17} />{site.address}</p>
+        <p class="flex items-start gap-2 whitespace-pre-line"><MapPin class="mt-0.5 shrink-0" size={17} />{site.address}</p>
       </div>
       <div class="mt-6">
         <SocialLinks socials={site.socials} variant="dark" />
