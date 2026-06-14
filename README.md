@@ -63,7 +63,7 @@ El panel esta en `public/admin`.
 Para produccion:
 
 1. Edita `public/admin/config.yml`.
-2. Cambia `TU_USUARIO/mision-alas-para-sonar-web` por el repo real.
+2. Confirma que `public/admin/config.yml` apunte al repo real: `alasparasonar/mision-alas-para-sonar-app`.
 3. Configura un backend OAuth para Decap CMS con GitHub.
 4. Publica en Cloudflare Pages.
 5. Entra a `https://misionalasparasonar.org/admin/`.

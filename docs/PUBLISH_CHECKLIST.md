@@ -11,7 +11,7 @@
 
 ## GitHub
 
-- Crear repositorio, por ejemplo `mision-alas-para-sonar-web`.
+- Crear repositorio, por ejemplo `mision-alas-para-sonar-app`.
 - Subir el proyecto a la rama `main`.
 - Proteger credenciales: no subir `.env`.
 
@@ -44,6 +44,6 @@ Configurar en Cloudflare Pages:
 ## CMS
 
 - Editar `public/admin/config.yml`.
-- Reemplazar `TU_USUARIO/mision-alas-para-sonar-web` por el repositorio real.
+- Confirmar que `public/admin/config.yml` apunte al repositorio real: `alasparasonar/mision-alas-para-sonar-app`.
 - Configurar OAuth para Decap CMS con GitHub.
 - Probar `/admin/` antes de entregar a editores.

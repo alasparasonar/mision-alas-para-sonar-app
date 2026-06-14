@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU_USUARIO/mision-alas-para-sonar-web
+  repo: alasparasonar/mision-alas-para-sonar-app
   branch: main
   base_url: https://TU_OAUTH_BACKEND.com
 
