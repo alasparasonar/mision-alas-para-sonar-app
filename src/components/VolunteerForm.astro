@@ -1,47 +1,104 @@
 ---
+import { BadgeCheck, CircleAlert, HeartHandshake } from '@lucide/astro';
 import site from '@data/site.json';
 
 const endpoint = import.meta.env.PUBLIC_VOLUNTEER_FORM_ENDPOINT || 'https://formspree.io/f/meewvpbp';
+const formId = endpoint.split('/').filter(Boolean).pop() ?? '';
+const formElementId = 'volunteer-form';
 ---
 
-<form class="grid gap-4 rounded-3xl bg-white p-6 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10" action={endpoint || `mailto:${site.email}`} method="POST">
-  <input type="hidden" name="form_type" value="voluntariado" />
-  <input type="hidden" name="_subject" value="Nueva inscripción de voluntariado desde el sitio web" />
-  <div class="grid gap-4 md:grid-cols-2">
-    <div>
-      <label class="mb-2 block text-sm font-bold text-ink" for="vol-name">Nombre</label>
-      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-name" name="name" autocomplete="name" required />
-    </div>
-    <div>
-      <label class="mb-2 block text-sm font-bold text-ink" for="vol-email">Correo</label>
-      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-email" type="email" name="email" autocomplete="email" required />
-    </div>
-  </div>
-  <div class="grid gap-4 md:grid-cols-2">
-    <div>
-      <label class="mb-2 block text-sm font-bold text-ink" for="phone">Teléfono</label>
-      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="phone" name="phone" autocomplete="tel" required />
-    </div>
-    <div>
-      <label class="mb-2 block text-sm font-bold text-ink" for="city">Ciudad</label>
-      <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="city" name="city" autocomplete="address-level2" required />
+<div class="formspree-shell rounded-[2rem] bg-white p-6 shadow-xl shadow-sky-deep/10 ring-1 ring-sky-deep/10 md:p-7">
+  <div data-fs-success class="formspree-banner formspree-banner-success">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-start">
+      <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-leaf/12 text-leaf">
+        <BadgeCheck size={28} />
+      </span>
+      <div>
+        <p class="text-sm font-extrabold uppercase tracking-[0.18em] text-leaf">Postulación enviada</p>
+        <h3 class="mt-2 font-display text-3xl font-bold text-ink">Gracias por sumarte.</h3>
+        <p class="mt-3 max-w-2xl text-sm leading-7 text-ink/70">
+          Recibimos tu inscripción de voluntariado. La fundación podrá contactarte para próximas actividades, convocatorias y espacios de apoyo.
+        </p>
+      </div>
     </div>
   </div>
-  <div>
-    <label class="mb-2 block text-sm font-bold text-ink" for="interest">Área de interés</label>
-    <select class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="interest" name="interest" required>
-      <option value="">Selecciona una opción</option>
-      <option>Apoyo a niños</option>
-      <option>Logística de actividades</option>
-      <option>Comunicación y redes</option>
-      <option>Gestión de donaciones</option>
-      <option>Apoyo profesional</option>
-    </select>
+
+  <div data-fs-error class="formspree-banner formspree-banner-error">
+    <div class="flex items-start gap-3">
+      <span class="mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-coral/10 text-coral">
+        <CircleAlert size={22} />
+      </span>
+      <div>
+        <p class="font-bold text-coral">No pudimos enviar la inscripción.</p>
+        <p class="mt-1 text-sm leading-6 text-ink/68">Revisa la información ingresada e intenta nuevamente.</p>
+      </div>
+    </div>
   </div>
-  <div>
-    <label class="mb-2 block text-sm font-bold text-ink" for="vol-message">Mensaje</label>
-    <textarea class="min-h-36 w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-message" name="message"></textarea>
-  </div>
-  <button class="rounded-full bg-sky-deep px-6 py-4 font-extrabold text-white" type="submit">Enviar inscripción</button>
-  <p class="text-xs leading-6 text-ink/55">Este formulario también está conectado con Formspree y enviará las postulaciones al correo configurado en ese servicio.</p>
-</form>
+
+  <form id={formElementId} class="grid gap-4" action={endpoint || `mailto:${site.email}`} method="POST">
+    <input type="hidden" name="form_type" value="voluntariado" />
+    <input type="hidden" name="_subject" value="Nueva inscripción de voluntariado desde el sitio web" />
+    <div class="grid gap-4 md:grid-cols-2">
+      <div>
+        <label class="mb-2 block text-sm font-bold text-ink" for="vol-name">Nombre</label>
+        <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-name" name="name" autocomplete="name" required data-fs-field />
+        <span class="formspree-field-error" data-fs-error="name"></span>
+      </div>
+      <div>
+        <label class="mb-2 block text-sm font-bold text-ink" for="vol-email">Correo</label>
+        <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-email" type="email" name="email" autocomplete="email" required data-fs-field />
+        <span class="formspree-field-error" data-fs-error="email"></span>
+      </div>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2">
+      <div>
+        <label class="mb-2 block text-sm font-bold text-ink" for="phone">Teléfono</label>
+        <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="phone" name="phone" autocomplete="tel" required data-fs-field />
+        <span class="formspree-field-error" data-fs-error="phone"></span>
+      </div>
+      <div>
+        <label class="mb-2 block text-sm font-bold text-ink" for="city">Ciudad</label>
+        <input class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="city" name="city" autocomplete="address-level2" required data-fs-field />
+        <span class="formspree-field-error" data-fs-error="city"></span>
+      </div>
+    </div>
+    <div>
+      <label class="mb-2 block text-sm font-bold text-ink" for="interest">Área de interés</label>
+      <select class="w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="interest" name="interest" required data-fs-field>
+        <option value="">Selecciona una opción</option>
+        <option>Apoyo a niños</option>
+        <option>Logística de actividades</option>
+        <option>Comunicación y redes</option>
+        <option>Gestión de donaciones</option>
+        <option>Apoyo profesional</option>
+      </select>
+      <span class="formspree-field-error" data-fs-error="interest"></span>
+    </div>
+    <div>
+      <label class="mb-2 block text-sm font-bold text-ink" for="vol-message">Mensaje</label>
+      <textarea class="min-h-36 w-full rounded-2xl border border-sky-deep/15 px-4 py-3" id="vol-message" name="message" data-fs-field></textarea>
+      <span class="formspree-field-error" data-fs-error="message"></span>
+    </div>
+    <button class="inline-flex items-center justify-center gap-2 rounded-full bg-sky-deep px-6 py-4 font-extrabold text-white" type="submit" data-fs-submit-btn>
+      <HeartHandshake size={18} />
+      <span>Enviar inscripción</span>
+    </button>
+    <p class="text-xs leading-6 text-ink/55">Este formulario también está conectado con Formspree y enviará las postulaciones al correo configurado en ese servicio.</p>
+  </form>
+</div>
+
+<script is:inline define:vars={{ formElementId, formId }}>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+
+  if (formElementId && formId) {
+    formspree('initForm', {
+      formElement: `#${formElementId}`,
+      formId,
+    });
+  }
+</script>
+<script is:inline src="https://unpkg.com/@formspree/ajax@1" defer></script>
